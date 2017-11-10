@@ -115,10 +115,10 @@ export function createLocalTracksA(options = {}) {
                 },
                 // eslint-disable-next-line no-confusing-arrow
                 reason =>
-                    gumProcess.canceled
-                        ? dispatch(_trackCreateCanceled(device))
-                        : dispatch(
-                            _onCreateLocalTracksRejected(reason, device)));
+                    dispatch(
+                        gumProcess.canceled
+                            ? _trackCreateCanceled(device)
+                            : _onCreateLocalTracksRejected(reason, device)));
 
             gumProcess.cancel = () => {
                 gumProcess.canceled = true;
