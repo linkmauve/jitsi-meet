@@ -17,13 +17,13 @@ export const TRACK_ADDED = Symbol('TRACK_ADDED');
  * callback. There will be TRACK_CREATE_CANCELED event instead of track
  * added/gum failed events.
  *
- * @type {
- *      type: TRACK_BEING_CREATED
- *      track: {
- *          local: true,
- *          mediaType: MEDIA_TYPE,
- *          gumProcess: Promise with cancel() method to abort
- *      }
+ * {
+ *     type: TRACK_BEING_CREATED
+ *     track: {
+ *         local: true,
+ *         gumProcess: Promise with cancel() method to abort,
+ *         mediaType: MEDIA_TYPE
+ *     }
  * }
  */
 export const TRACK_BEING_CREATED = Symbol('TRACK_BEING_CREATED');
@@ -32,9 +32,9 @@ export const TRACK_BEING_CREATED = Symbol('TRACK_BEING_CREATED');
  * Action sent when canceled GUM process completes either successfully or with
  * an error (error is ignored and track is immediately disposed if created).
  *
- * @type {
- *      type: TRACK_CREATE_CANCELED,
- *      trackType: MEDIA_TYPE
+ * {
+ *     type: TRACK_CREATE_CANCELED,
+ *     trackType: MEDIA_TYPE
  * }
  */
 export const TRACK_CREATE_CANCELED = Symbol('TRACK_CREATE_CANCELED');
@@ -42,10 +42,10 @@ export const TRACK_CREATE_CANCELED = Symbol('TRACK_CREATE_CANCELED');
 /**
  * Action sent when GUM fails with an error other than permission denied.
  *
- * @type {
- *      type: TRACK_CREATE_ERROR,
- *      permissionDenied: Boolean,
- *      trackType: MEDIA_TYPE
+ * {
+ *     type: TRACK_CREATE_ERROR,
+ *     permissionDenied: Boolean,
+ *     trackType: MEDIA_TYPE
  * }
  */
 export const TRACK_CREATE_ERROR = Symbol('TRACK_CREATE_ERROR');
